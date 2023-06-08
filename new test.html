@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create a Test</title>
+    <style>
+    
+    @import url('https://fonts.googleapis.com/css?family=Acme');
+    @import url('https://fonts.googleapis.com/css?family=Pangolin');
+    @import url('https://fonts.googleapis.com/css?family=Signika');
+    @import url('https://fonts.googleapis.com/css?family=Mukta');
+    @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+    
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Signika;
+    }
+    .nav{
+        position:fixed;
+        background-color:#002244;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: all 0.3s  ease-in-out;
+        z-index: 2;
+        cursor: pointer;      
+    }
+    .nav .navbar{
+        text-align:right;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        display:flex;
+        flex: auto;
+        flex-grow: inherit;
+        padding: 20px 0;
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Signika;
+        transition:all 0.3s ease-in-out ;
+        justify-content: space-between;    
+    }
+    .nav h1{
+        color:#F0F8FF;
+        font-size: 25px;
+        font:normal;
+    }
+    .nav a.current,
+    .nav a:hover
+    {
+        color:#414c49;
+        font-weight: bold;
+    }
+    .nav a{
+        color: #F0F8FF;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav.active{
+        background-color:#162b24;
+        box-shadow: 0 2px 10px rgba(43, 40, 40, 0.603);
+    }
+    .nav.active a,
+    .nav.active h1{
+        color:#89c5b2;
+    }
+    .nav.active .navbar{
+        padding: 10px 0;
+    }
+    .navbar ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        display:flex;        
+    }
+    .generatetest{
+        font-family: Ubuntu;
+        color:#002244;
+        width: 600px;
+        position: relative;
+        padding: 0px;
+        margin: 0;
+        padding: 20px;
+        border: 2px solid rgba(71, 7, 7, 0.329);
+        border-radius: 5px;
+        background-color:#002244;        
+    }
+    .generatetest h1{
+        text-align: center;
+        font-size: 70px;
+        background-color:#002244;     
+        justify-content: center;
+        color:#F0F8FF;
+        padding: 10px;
+        border:#F0F8FF solid;
+        border-bottom-width: 6px;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-top-width: 10px;
+        padding-bottom: 25px;       
+    }
+    .generatetest h1 p{
+        font-size: 20px;
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font: 100;
+        margin-bottom: 10px;
+        line-height: 30px;
+        word-spacing: 5px;
+    }
+    .generatetest .test{
+        background-color:#002244;   
+        color:#F0F8FF;
+        padding-top: 15px;
+    }
+    .generatetest .test label[for="testname"]{
+        font-size: 15px;
+        font-weight: bold;
+        top: -25px;
+        left: 0;
+        bottom: 300px;
+        margin-right: 420px;
+        padding-top:100px;
+        vertical-align:top;
+    }
+    .generatetest .test label[for="instructions"]{
+        font-size: 15px;
+        font-weight: bold;
+        top: -25px;
+        left: 0;
+        bottom: 300px;
+        margin-right: 420px;
+        padding-top:100px;
+        vertical-align:top;
+    }
+    .generatetest .name, 
+    .generatetest textarea{
+        background-color:transparent;
+        border: 0;
+        border-bottom:#F0F8FF 3px solid ;
+        display: block;
+        width: 500px;
+        padding: 15px ;
+        color:#F0F8FF;
+        font: bold;
+        font-size: 20px;
+        text-align: center;
+        cursor:text;     
+    }
+    .generatetest .name:hover,
+    .generatetest textarea:hover{
+        border-bottom-color: #5b6453;
+    }  
+    button
+    {
+        cursor:pointer;
+        display:inline-block;
+        width: 510px;
+        background-color:#F0F8FF;
+        padding: 10px;
+        color:#002244;
+        border: 0;
+        font-family: Acme;
+        font-size: 15px;
+        border-radius: 5px;
+        font-style: normal;
+        font-display:initial;
+    }
+    button:hover{
+        background-color:#002244;
+        color:#F0F8FF;
+    }
+    button:focus{
+        outline: 0;
+    }
+    button:active {
+        transform: scale(0.98);
+    }
+    .submit{
+        width: 255px;
+        margin-top: 10px;   
+    }
+    .reset{
+        width: 255px;
+        margin-top: 10px;        
+    }
+    .generatetest .test label{
+        font-size: 25px;
+        font-weight: bold;
+        top: -25px;
+        left: 50px;
+        bottom: 300px;
+        margin-right: 420px;
+        margin-left: 30px;
+        vertical-align:top;
+        width: 510px;  
+        margin-top: 10px;   
+    }
+    label.quesno{
+        background-color:#002244;
+        color:#F0F8FF;
+        width: 510px; 
+        display: flex;
+        justify-content: left; 
+        margin-left: 185px; 
+        text-align: left;
+        padding-left: 0px; 
+        padding-top: 0px;
+        font-family:Signika;
+        margin: 0;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    input.Instructs[type="text"]{
+        background-color:#F0F8FF;
+        color:#002244;
+        margin-left: 0px; 
+        text-align: left;
+        height: 20px;  
+        margin: 0;  
+        display:inline-block;
+        margin-right: 370px;
+        font-size: 25px;
+        font-family: Signika;
+    }
+    label.options {
+        display:block;
+        color:#F0F8FF;
+        font: bold;
+        margin-left: 170px;
+        margin: 0;
+        top: 10px;
+        text-align: left;
+        font-size: 15px;
+        justify-content: center;
+    }
+    input{
+        background-color:#F0F8FF;
+        color:#002244;
+        border: 0;
+        justify-content: left;
+        font-size: 20px;
+        width: 450px;
+        height: 35px;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+    input.askques {
+        width: 510px;
+        height: 50px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        background-color:#F0F8FF;
+        color:#002244;
+        font-family: Mukta;
+        text-align: left;
+        font-size: 45px;
+        font: bold;
+        border-radius: 5px;
+    }
+    
+    .addques {
+        width: 510px;
+        font-size: 15px;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition-duration: 0.3s;
+        cursor:pointer;
+        background-color:#F0F8FF;
+        color:#002244;
+        border: 0;
+        font-family: Acme;
+        border-radius: 5px;
+        font-style: normal;
+        font-display:initial;
+    }
+    #quescontainer{
+        background-color:#002244;
+        color:#F0F8FF;
+    }
+    select{
+        background-color:#F0F8FF;
+        display: inline;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        color: #002244;
+        height: 25px;
+        border: 0;
+        border-radius: 5px;
+    }  
+
+ </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <div class="navbar">
+                <h1 class="logo">Test Management System</h1>
+                <ul>
+                    <li><a href="welcome page.html"> Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="login.html">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header><br><br><br><br><br>
+    
+    
+    <center>
+        <div class="generatetest">
+            <center>
+                <h1>Create a Test
+                    <p> Test Taking has now become hassle free. Use our Test Management System to generate the test of your choice!!</p>
+                </h1>
+            </center>
+                
+            <form>
+                <div class="test">
+                     <center>
+                        <label for="testname" >Test Name</label>
+                        <br>
+                        <input type="text" class="name" title="Enter The Test Name Here" name="testname" required>
+                        <br>
+                        <label for="instructions">Instructions</label>
+                        <br>
+                        <textarea id="instructions" name="instructions" title="Enter The Instructions For Test Here"></textarea>
+                        <br>
+                        <button class="addques">Add New Question</button>
+                            
+                        <div id="quescontainer"></div>
+                            
+                        <div class="btn">
+                            <button type="submit" class="submit" onclick="window.location.href='question.html';">Submit</button>                            
+                            <button type="reset" class="reset">Reset</button>            
+                        </div>
+                    </center>
+                </div>
+            </form>
+        </div>
+    </center>
+    
+    <script>
+    var questionContainer = document.getElementById('quescontainer');
+    var addQuestionButton = document.querySelector('.addques');
+    
+    addQuestionButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        var questionCount = questionContainer.getElementsByClassName('test').length;
+        var newQuestionGroup = document.createElement('div');
+        newQuestionGroup.classList.add('test');
+
+        var questionLabel = document.createElement('label');
+        questionLabel.classList.add('quesno');
+        questionLabel.textContent = 'Question ' + (questionCount + 1) + ':';
+        
+        var questionInput = document.createElement('input');
+        questionInput.classList.add('askques');
+        questionInput.type = 'text';
+        questionInput.name = 'question' + (questionContainer.children.length + 1);
+        
+        newQuestionGroup.appendChild(questionLabel);
+        newQuestionGroup.appendChild(questionInput);
+        
+        for (var i = 0; i < 4; i++) {
+            var optionLabel = document.createElement('label');
+            optionLabel.classList.add('options');
+            optionLabel.textContent = String.fromCharCode(97 + i) + ')';
+            
+            var optionInput = document.createElement('input');
+            optionInput.type = 'text';
+            optionInput.name = 'answer' + (questionContainer.children.length + 1);
+            
+            optionLabel.appendChild(optionInput);
+            newQuestionGroup.appendChild(optionLabel);
+        }
+        
+        var correctAnswerLabel = document.createElement('label');
+        correctAnswerLabel.classList.add('options');
+        correctAnswerLabel.textContent = 'Correct Answer:';
+        
+        var correctAnswerSelect = document.createElement('select');
+        correctAnswerSelect.name = 'correctAnswer' + (questionContainer.children.length + 1);
+        
+        for (var i = 0; i < 4; i++) {
+            var option = document.createElement('option');
+            option.value = String.fromCharCode(97 + i);
+            option.text = String.fromCharCode(97 + i);
+            correctAnswerSelect.appendChild(option);
+        }
+        
+        correctAnswerLabel.appendChild(correctAnswerSelect);
+        newQuestionGroup.appendChild(correctAnswerLabel);
+        questionContainer.appendChild(newQuestionGroup);
+        questionContainer.appendChild(addQuestionButton);
+    });
+    
+    const form = document.querySelector("form");
+    let qBank=[];
+    let testInfo = {};
+    let queno=1;
+    
+    form.addEventListener("submit",function(e)
+    {
+        e.preventDefault();
+        console.log(form.elements)
+        testInfo["name"] = form.elements[0].value;
+        testInfo["instructions"] = form.elements[1].value;
+        
+        for(let i=2;i<form.elements.length;i=i+6)
+        {
+            if(i+7<form.elements.length)
+            {
+                let que = {};
+                que["que"] = form.elements[i].value;
+                que["op1"] = form.elements[i+1].value;
+                que["op2"] = form.elements[i+2].value;
+                que["op3"] = form.elements[i+3].value;
+                que["op4"] = form.elements[i+4].value;
+                que["ans"] = form.elements[i+5].value;
+                que["queno"] = queno++
+                qBank.push(que);
+            }
+        }
+        
+        console.log(qBank);
+        localStorage.setItem("qBank",JSON.stringify(qBank));
+        localStorage.setItem("testInfo",testInfo);
+    });
+    </script>
+    
+</body>
+</html>
