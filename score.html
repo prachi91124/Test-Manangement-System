@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Score Card</title>
+    <style>
+  
+    @import url('https://fonts.googleapis.com/css?family=Acme');
+    @import url('https://fonts.googleapis.com/css?family=Pangolin');
+    @import url('https://fonts.googleapis.com/css?family=Signika');
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        
+        font-family: Acme;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .nav{
+        position:fixed;
+        background-color:#002244;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: all 0.3s  ease-in-out;
+        z-index: 2;
+        cursor: pointer;
+        
+    }
+    .nav .navbar{
+        text-align:right;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        display:flex;
+        flex: auto;
+        flex-grow: inherit;
+        padding: 20px 0;
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Signika;
+        transition:all 0.3s ease-in-out ;
+        justify-content: space-between;    
+    }
+    .nav h1{
+        color:#F0F8FF;
+        font-size: 25px;
+        font:normal;
+    }
+    .nav a.current,
+    .nav a:hover
+    {
+        color:#414c49;
+        font-weight: bold;
+    }
+    .nav a{
+        color:#F0F8FF;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav.active{
+        background-color:#162b24;
+        box-shadow: 0 2px 10px rgba(43, 40, 40, 0.603);
+    }
+    .nav.active a,
+    .nav.active h1{
+        color:#89c5b2;
+    }
+    .nav.active .navbar{
+        padding: 10px 0;
+    }
+    .navbar ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        display:flex;      
+    }   
+    .score-sheet {
+        padding: 10px;
+        border-radius: 15px;
+        border-color:#002244;
+        border: solid;
+        border-width: 3px ;
+        margin-left: 100px;
+        margin-right: 100px;
+        display:block;
+        width:710px;
+        height:auto;
+        margin-top: 50px;
+    }
+	.score-sheet h2 {
+        text-align: center;
+        font-family: Signika;
+        font-size: 75px;
+        padding-left: 100px;
+        padding-right: 100px;
+        color:#002244;
+	}
+	.score-sheet ul {
+        list-style:none;
+        padding: 0;
+        margin: 0;
+        font-family: Signika;
+        color:#002244;
+        margin-top: 30px;
+    }
+    .score-sheet li {
+        display: flex;
+        padding-bottom: 10px;
+        line-height: 50px;
+        font-size: 23px;
+	}
+    .score-sheet li span {
+        font-weight: bold;
+	}
+	.score-sheet .total span {
+        color:#002244;
+        font-size: 23px;
+	}
+    .btn{
+        background-color:#002244;
+        color:#F0F8FF;
+        font-size: 18px;
+        border-radius: 5px;
+        border-right-style:double;
+        border: 10px #89c5b2;
+        font-family: Acme;
+        padding: 20px;
+        cursor: pointer;
+        outline-color: #330303ba;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 50px;
+    }
+    @keyframes scale{
+        to{
+            transform: translate(-50%,-50%) scale(3);
+            opacity: 0;
+        }
+    }
+    .btn:hover{
+        background-color:#4b5955;
+        color:#F0F8FF;
+    }
+    .contact .mail,
+    .contact .phone,
+    .contact #ig,
+    .contact #fb{
+        color:#F0F8FF;
+        background-color:#002244;
+        justify-content: center;
+        display: flex;
+        height: 4vh;
+        padding: 10px;
+        width: 100%;
+    }
+    .contact .mail:hover,
+    .contact .phone:hover,
+    .contact #ig:hover,
+    .contact #fb:hover{
+        color:aliceblue;
+    }
+    .phone::before
+    {
+        content:"\260E";
+    }
+    .mail::before
+    {
+        content:"\2709";   
+    }
+    
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navbar">
+            <h1 class="logo">Test Management System</h1>
+            <ul>
+                <li><a href="welcome page.html"> Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+    <center>
+        <div class="score-sheet">
+            <h2>Score Sheet</h2>
+            <ul>
+                <li><span>Question 1:</span> <span class="q1"></span></li>
+                <li><span>Question 2:</span> <span class="q2"></span></li>
+                <li><span>Question 3:</span> <span class="q3"></span></li>
+                <li><span>Question 4:</span> <span class="q3"></span></li>
+                <li><span>Question 5:</span> <span class="q3"></span></li>
+                <li><span>Question 6:</span> <span class="q3"></span></li>
+                <li><span>Question 7:</span> <span class="q3"></span></li>
+                <li><span>Question 8:</span> <span class="q3"></span></li>
+                <li><span>Question 9:</span> <span class="q3"></span></li>
+                <li><span>Question 10:</span> <span class="q3"></span></li>
+                <li class="total"><span>Total:</span> <span class="total-score"></span></li>
+            </ul>
+        </div>
+   </center>
+   <br><br>
+    
+    <center>
+        <button class="btn" onclick="window.location.href='welcome page.html';">Go Back To Home Page</button>
+    </center>
+
+    <div class="contact">
+        <p href="mail to:prachianand321@gmail.com" class="mail">tms.team@gmail.com</p>
+        <p class="phone">8094526731</p>
+        <p id="fb" class="fa fa-facebook">&nbsp tms.team</p>
+        <p id="ig" class="fa fa-instagram">  &nbsp tms.team</p>
+    </div>
+    
+    <script>
+    
+    const buttons = document.querySelectorAll('.btn')
+    
+    buttons.forEach(button =>{
+            button.addEventListener('click',function(e){
+                const x=e.pageX
+                const y=e.pageY
+
+                const buttonTop=e.target.offsetTop
+                const buttonLeft=e.target.offsetLeft
+
+                const xInside=x-buttonLeft
+                const yInside=y-buttonTop
+
+                const circle=document.createElement('span')
+                circle.classList.add('circle')
+                circle.style.top=yInside+'px'
+                circle.style.left=xInside+'px'
+
+                this.appendChild(circle)
+
+                setTimeout(() => circle.remove(),500)
+                                
+            })
+        })
+
+    const form = document.getElementById("test-form");
+    const scoreSheet = document.querySelector(".score-sheet");
+    const q1Result = scoreSheet.querySelector(".q1");
+    const q2Result = scoreSheet.querySelector(".q2");
+    const q3Result = scoreSheet.querySelector(".q3");
+    const q4Result = scoreSheet.querySelector(".q4");
+    const q5Result = scoreSheet.querySelector(".q5");
+    const q6Result = scoreSheet.querySelector(".q6");
+    const q7Result = scoreSheet.querySelector(".q7");
+    const q8Result = scoreSheet.querySelector(".q8");
+    const q9Result = scoreSheet.querySelector(".q9");
+    const q10Result = scoreSheet.querySelector(".q10");        
+    const totalScore = scoreSheet.querySelector(".total-score");
+    
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const q1 = document.querySelector('input[name="q1"]:checked').value;
+        const q2 = document.querySelector('input[name="q2"]:checked').value;
+        const q3 = document.querySelector('input[name="q3"]:checked').value;
+        const q4 = document.querySelector('input[name="q4"]:checked').value;
+        const q5 = document.querySelector('input[name="q5"]:checked').value;
+        const q6 = document.querySelector('input[name="q6"]:checked').value;
+        const q7 = document.querySelector('input[name="q7"]:checked').value;
+        const q8 = document.querySelector('input[name="q8"]:checked').value;
+        const q9 = document.querySelector('input[name="q9"]:checked').value;
+        const q10 = document.querySelector('input[name="q10"]:checked').value;
+        
+        let score = 0;
+        if (q1 === "a") {
+            q1Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q1Result.textContent = "Wrong (0)";
+        }
+    
+        if (q2 === "a") {
+            q2Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q2Result.textContent = "Wrong (0)";
+        }
+    
+        if (q3 === "a") {
+            q3Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q3Result.textContent = "Wrong (0)";
+        }
+
+        if (q4 === "a") {
+            q4Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q4Result.textContent = "Wrong (0)";
+        }
+
+        if (q5 === "a") {
+            q5Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q5Result.textContent = "Wrong (0)";
+        }
+           
+        if (q6 === "a") {
+            q6Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q6Result.textContent = "Wrong (0)";
+        }
+
+        if (q7 === "a") {
+            q7Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q7Result.textContent = "Wrong (0)";
+        }
+        
+        if (q8 === "a") {
+            q8Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q8Result.textContent = "Wrong (0)";
+        }
+
+        if (q9 === "a") {
+            q9Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q9Result.textContent = "Wrong (0)";
+        }
+
+        if (q10 === "a") {
+            q10Result.textContent = "Correct (+1)";
+            score++;
+        } else {
+            q10Result.textContent = "Wrong (0)";
+        }
+        
+        totalScore.textContent = score;
+        scoreSheet.style.display = "block";
+    });
+    </script>
+    
+</body>
+</html>
