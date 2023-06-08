@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=');
+        @import url('https://fonts.googleapis.com/css?family=Pangolin');
+        @import url('https://fonts.googleapis.com/css?family=Signika');
+        @import url('https://fonts.googleapis.com/css?family=Mukta');
+        @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+        
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{ 
+            margin-right: 200px;
+            margin-left: 200px;
+            background-color:#F0F8FF;
+            color:#002244;
+            font-family:Acme;
+            font-size: 50px;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        legend{
+            font-family:Acme ;
+            font-size: 50px;
+            text-align: center;
+            color:#F0F8FF;
+            margin-top: 100px;
+            background-color:#002244;
+            width:500px;
+            padding: 15px;
+            border-radius: 0;
+            border-top-right-radius: 100px;        
+        }
+        fieldset{
+            background-color:#002244;
+            color:#F0F8FF ;
+            font-size: 25px;
+            font-family:Acme;
+            height:fit-content;
+            width: 500px;
+            margin: auto;
+            border: 0px;
+            border-radius: 0px;
+            vertical-align: middle;
+            justify-content: center;
+            margin-top: 0;
+            padding: 20px;
+            display:inline-block;
+            margin-left:270px ;
+        }
+        fieldset label{
+            font-size: 15px;
+            top: -15px;
+        }
+        fieldset input{
+            background-color:#002244;
+            color:#F0F8FF;
+            font-family:Acme;
+            width: 100%;
+            cursor:text;
+            margin-bottom: 5px;
+            margin-top: 1px;
+            border: 0;
+            border-bottom:#F0F8FF solid 2px;
+        }
+        input:hover
+        {
+            background-color: #523d3d;
+            color: aliceblue;
+        }
+        fieldset .reset{
+            cursor: pointer;
+            justify-content: space-between;
+            position: relative;
+            border: 0;
+            background-color:#F0F8FF;
+            color:#002244;
+            font-size: 20px;
+            line-height: 25px;
+            margin-bottom: 5px;
+            padding: 10px;         
+        }
+        fieldset .submit{
+            cursor: pointer;
+            justify-content: space-between;
+            position: relative;
+            border: 0;
+            background-color:#F0F8FF;
+            color:#002244;
+            font-size: 20px;
+            line-height: 25px;
+            margin-bottom: 5px;
+            padding: 10px;          
+        }
+        label{
+            margin-bottom: 5px;
+            margin-top: 1px;
+            font-family: Acme;
+        }
+        fieldset .submit:hover,
+        fieldset .reset:hover{
+            background-color:#3a4d60;
+            color: #F0F8FF;
+        }       
+    </style>
+</head>
+<body>
+    <form action="welcome page.html">
+        <center>
+            <legend><b>Sign Up</b></legend>
+        </center>
+        <fieldset>
+            <label for:"Name">Name</label>
+            <input type="text" title="Enter Your Name" name="name">
+            <br>
+            <label for:"DOB">Date Of Birth</label>
+            <input type="date" title="Enter Your Date Of Birth" name="DOB">
+            <br>
+            <label> E-mail</label>
+            <input type="email" title="Enter Your E-mail" name="email">
+            <br>
+            <label for:"Pno">Phone Number</label>
+            <input type="tel" title="Enter Your Phone Number"name="Pno">
+            <br>
+            <label for"Univ">Institution Name</label>
+            <input type="text" title="Enter Your Institution Name" name="Univ">
+            <br>
+            <label for:"Pass">Password</label>
+            <input type="password" minlength="8"  title="Enter Your Password" name="Pass"> 
+            <br>
+            <br>
+            <center>
+                <div class="button">
+                    <input class="reset" type="reset" >
+                    <input class="submit" type="submit" src="welcome page.html">
+                </div>
+            </center>
+        </fieldset>
+    </form>   
+</body>
+</html>
