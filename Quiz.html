@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Test Management Portal</title>
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Signika');
+
+	*{
+		box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+		margin-right: 100px;
+		margin-left: 100px;
+		font-family:Signika;
+		justify-content: center;
+	}		
+	.container {
+		margin-left: 100px;
+		margin-right: 100px;
+		margin-top: 55px;
+		padding: 20px;
+	}
+	.question {
+		margin-bottom: 20px;
+	    font-family:Signika;
+		margin-top: 10px;	
+	}
+	.question p {
+		margin-top: 0;	
+		color:#002244;
+		padding: 10px;
+		font-size: 30px;
+		display: flex;
+		margin-bottom: 0;
+		font-weight: bold;
+		width: 100%;
+	}
+	.choices label {
+		display: block;
+		margin-bottom: 10px;
+		color:#002244;
+		font:bold;
+		margin-top: 15px;
+		font-size: 23px;
+		line-height: 50px;
+	}
+	.choices label:hover{
+		color:#60666c;		
+	}
+	.choices input {
+		margin-right: 10px;
+		color:#002244;
+	    cursor: pointer;
+		line-height: 20px;
+	}
+	.btn {
+		display: inline-block;
+		padding: 10px 20px;
+		background-color:#002244;
+		text-decoration: none;
+		border-radius: 5px;
+		transition: background-color 0.2s ease;
+		cursor: pointer;
+		align-content: center;
+		align-items: center;
+		border-color:#f0f8ffa2;
+		justify-items: center;
+		color:#F0F8FF;
+		font: bold;
+		font-family: Signika;
+		font-size: 20px;
+		justify-content: center;
+		margin-top: 20px;
+		width: 250px;
+		height: 75px;
+	}
+	.btn:hover {
+		background-color:#414c49;
+		color:#F0F8FF;
+		font-weight: bold;
+	}
+	.nav{
+        position:fixed;
+        background-color:#002244;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: all 0.3s  ease-in-out;
+        z-index: 2;
+        cursor: pointer; 
+    }
+    .nav .navbar{
+        text-align:right;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        display:flex;
+        flex: auto;
+        flex-grow: inherit;
+        padding: 20px 0;
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Signika;
+        transition:all 0.3s ease-in-out ;
+        justify-content: space-between;    
+    }
+    .nav h1{
+        color:#F0F8FF;
+        font-size: 25px;
+        font:normal;
+    }
+    .nav a.current,
+    .nav a:hover
+    {
+        color:#414c49;
+        font-weight: bold;
+    }
+    .nav a{
+        color:#F0F8FF;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav.active{
+        background-color:#162b24;
+        box-shadow: 0 2px 10px rgba(43, 40, 40, 0.603);
+    }
+    .nav.active a,
+    .nav.active h1{
+        color:#89c5b2;
+    }
+    .nav.active .navbar{
+        padding: 10px 0;
+    }
+    .navbar ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        display:flex;    
+        
+    }
+	.time h1{
+		margin-top: 200px;
+	}
+	</style>
+</head>
+<body>
+	<nav class="nav">
+        <div class="navbar">
+            <h1 class="logo">Test Management System</h1>
+			<ul>
+                <li><a href="welcome page.html"> Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+	
+	<div class="container">
+		<form id="test-form">
+			
+			<div class="question">
+				<p>Q1. Which keyword is used to define function in python?</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q1" value="a">
+						def
+					</label>
+					<label>
+						<input type="radio" name="q1" value="b">
+						function
+					</label>
+					<label>
+						<input type="radio" name="q1" value="c">
+						define
+					</label>
+				</div>
+			</div>
+
+			<div class="question">	
+				<p>Q2. What is the syntax to declare a variable in c?</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q2" value="a">
+						var x;
+					</label>
+					<label>
+						<input type="radio" name="q2" value="b">
+						int x;
+					</label>
+					<label>
+						<input type="radio" name="q2" value="c">
+						x=int;
+					</label>
+				</div>
+            </div>
+
+            <div class="question">  
+                <p>Q3. How to declare a constant in c?</p>
+                <div class="choices">
+                    <label>
+                        <input type="radio" name="q3" value="a">
+                        constant x;
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="b">
+                        const x;
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="c">
+                        #define x;
+                    </label>
+                </div>
+            </div>
+
+			<div class="question">	
+				<p>Q4. The no of keywords in C language are:</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q4" value="a">
+						32
+					</label>
+					<label>
+						<input type="radio" name="q4" value="b">
+						16
+					</label>
+					<label>
+						<input type="radio" name="q4" value="c">
+						44
+					</label>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>Q5. What is the full form of HTML?</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q5" value="a">
+						HyperText Markup Language
+					</label>
+					<label>
+						<input type="radio" name="q5" value="b">
+						HyperText Makeup Language
+					</label>
+					<label>
+						<input type="radio" name="q5" value="c">
+						HomeText Makeup language
+					</label>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>Q6. Which of these is not a datatype?</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q6" value="a">
+						char
+					</label>
+					<label>
+						<input type="radio" name="q6" value="b">
+						bool
+					</label>
+					<label>
+						<input type="radio" name="q6" value="c">
+						arr
+					</label>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>Q7. CSS stands for:</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q7" value="a">
+						Cascading Style Sheets
+					</label>
+					<label>
+						<input type="radio" name="q7" value="b">
+						Creative Style Sheets
+					</label>
+					<label>
+						<input type="radio" name="q7" value="c">
+						Colourful Style Sheet
+					</label>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>Q8. Which Html attribute is used to specify the url of an external javascript file?</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q8" value="a">
+						href
+					</label>
+					<label>
+						<input type="radio" name="q8" value="b">
+						link
+					</label>
+					<label>
+						<input type="radio" name="q8" value="c">
+						src
+					</label>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>Q9. Which css property is used to add border around an element?</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q9" value="a">
+						border-style
+					</label>
+					<label>
+						<input type="radio" name="q9" value="b">
+						border color
+					</label>
+					<label>
+						<input type="radio" name="q9" value="c">
+						Both of them
+					</label>
+				</div>
+			</div>
+
+			<div class="question">
+				<p>Q10. Which css property is used to control the spacing between libnes of text?</p>
+				<div class="choices">
+					<label>
+						<input type="radio" name="q10" value="a">
+						line-height
+					</label>
+					<label>
+						<input type="radio" name="q10" value="b">
+						text-spacing
+					</label>
+					<label>
+						<input type="radio" name="q10" value="c">
+						line-spacing
+					</label>
+				</div>
+			</div>
+			
+			<center>
+				<button class="btn" formaction="score.html">Submit</button>
+			</center>
+		</form>
+    
+        
+    </div>
+	
+	<script>
+		// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+	</script>
+	<!-- <script src="time.js"></script> -->
+	
+</body>
+</html>
