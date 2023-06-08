@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results Page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Acme');
+    @import url('https://fonts.googleapis.com/css?family=Pangolin');
+    @import url('https://fonts.googleapis.com/css?family=Signika');
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Acme;
+    }
+    .nav{
+        position:fixed;
+        background-color: #002244;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: all 0.3s  ease-in-out;
+        z-index: 2;
+        cursor: pointer;  
+    }
+    .nav .navbar{
+        text-align:right;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        display:flex;
+        flex: auto;
+        flex-grow: inherit;
+        padding: 20px 0;
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Signika;
+        transition:all 0.3s ease-in-out ;
+        justify-content: space-between;    
+    }
+    .nav h1{
+        color: #F0F8FF;
+        font-size: 25px;
+        font:normal;
+    }
+    .nav a.current,
+    .nav a:hover
+    {
+        color:#414c49;
+        font-weight: bold;
+    }
+    .nav a{
+        color: #F0F8FF;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav.active{
+        background-color:#0e2e4d;
+        box-shadow: 0 2px 10px rgba(43, 40, 40, 0.603);
+    }
+    .nav.active a,
+    .nav.active h1{
+        color:#F0F8FF;
+    }
+    .nav.active .navbar{
+        padding: 10px 0;
+    }
+    .navbar ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        display:flex;    
+        
+    }
+    .correct-answer {
+      color: green;
+    }
+    .incorrect-answer {
+      color: red;
+    }
+    #results-container
+    {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+        border:2px solid;
+        height: 900px;
+    }
+    h2{
+        justify-content: center;
+        color:#002244;
+        font-size: 75px;
+        text-align: center;
+        margin:auto;
+        margin-top: 80px;
+    }
+    #results-container{
+        justify-content: center;
+        margin: auto;
+        background-color: #002244;
+        color:#F0F8FF;
+        width: 60%;
+        padding: 20px;
+        height: fit-content;
+    }
+  </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navbar">
+            <h1 class="logo">Test Management System</h1>
+            <ul>
+                <li><a href="welcome page.html"> Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <h2>Results</h2>
+    <div id="results-container"></div>
+    
+    <script>
+    
+    const queArray = JSON.parse(localStorage.getItem('qBank'));
+    console.log(queArray)
+    const answersArray = JSON.parse(localStorage.getItem('ansList'));
+    console.log(answersArray)
+    let right = 0, wrong = 0;
+    for(let i=0;i<queArray.length;i++)
+    {
+        if(queArray[i]["ans"]==answersArray[i][i+1])
+        {
+          right++;
+        }
+        else
+        {
+            wrong++;
+        }
+    }
+
+    // get results array from localstorage and display all past
+    // result info from there
+    const resultsDiv = document.querySelector("#results-container");
+    let results = [];
+    
+    const result = document.createElement("div");
+    result.innerHTML = `<h4>Test Number</h4>
+    <p>${"username"}</p>
+    <p>Right : ${right}</p>
+    <p>Wrong : ${wrong}</p>
+    <p>Date : ${answersArray[0].datetime}</p>`
+    resultsDiv.append(result)
+    //  store all results in localstorage
+    </script>
+</body>
+</html>
