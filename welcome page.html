@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Welcome Page</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Acme');
+    @import url('https://fonts.googleapis.com/css?family=Pangolin');
+    @import url('https://fonts.googleapis.com/css?family=Signika');
+
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #ECFFDC;
+        }
+    .nav{
+        position:fixed;
+        background-color: #002244;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: all 0.3s  ease-in-out;
+        z-index: 2;
+        cursor: pointer;  
+    }
+    .nav .navbar{
+        text-align:right;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        display:flex;
+        flex: auto;
+        flex-grow: inherit;
+        padding: 20px 0;
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;  
+        font-family: Signika;
+        transition:all 0.3s ease-in-out ;
+        justify-content: space-between;    
+    }
+    .nav h1{
+        color: #F0F8FF;
+        font-size: 25px;
+        font:normal;
+    }
+    .nav a.current,
+    .nav a:hover
+    {
+        color:#414c49;
+        font-weight: bold;
+    }
+    .nav a{
+        color: #F0F8FF;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav.active{
+        background-color:#0e2e4d;
+        box-shadow: 0 2px 10px rgba(43, 40, 40, 0.603);
+    }
+    .nav.active a,
+    .nav.active h1{
+        color:#F0F8FF;
+    }
+    .nav.active .navbar{
+        padding: 10px 0;
+    }
+    .navbar ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        display:flex;     
+    }  
+    .web{
+        background-image:url("images/download\ \(2\).jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: bottom center;
+        display: flex;
+        height: 100vh; 
+        color: rgb(146, 188, 229); 
+        font-weight: bold; 
+        width:auto;  
+        align-items: center;
+        justify-content: center; 
+        text-align: center;
+        margin-bottom: 0px;
+        z-index: 0;
+    }
+    .welcome h1{
+        font-size: 100px;
+        margin: -20px 0 20px;
+        color: rgb(2, 17, 2);
+        font-weight:bolder;      
+    }
+    .welcome::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0, 0, 1, 0.418);
+        z-index: 1;
+        padding: 10px;
+    }
+    .web .welcome h2{
+        letter-spacing: 1px;
+        color: rgb(2, 17, 2);
+        font-size: 35px;
+        margin-top: 20px;
+    }
+    .web .welcome h3{
+        letter-spacing: 1px;
+        color: rgb(2, 17, 2);
+        font-size: 25px;
+        margin-top: 20px;
+    }
+    .intro{
+        z-index:-2;
+        background-blend-mode:lighten;
+        background-image: linear-gradient(50,90);
+        background-color:#F0F8FF;
+        color: #002244;
+
+    }
+    .title{
+        color: #002244;
+        text-align: center;
+        font-size: 75px;
+        margin-right: 100px;
+        margin-left: 100px;
+    }
+    .abstract{
+        text-align: justify;
+        letter-spacing: 1;
+        line-height: 55px;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 40px;
+        font-size: 25px;
+        z-index: -1;
+    }
+    .options {
+        color:#002244;
+        text-align: justify;
+        letter-spacing: 1;
+        line-height: 55px;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 40px;
+        font-size: 35px;
+        text-decoration: none;   
+    }
+    .options ul:hover,
+    .options .take:hover,
+    .options .create:hover
+    {
+        color:#203040;
+    }
+    .options .take,
+    .options .create{
+        text-decoration: none;
+        color:#002244;
+        text-align: justify;
+        letter-spacing: 1;
+        line-height: 55px;
+        margin-left: 0px;
+        margin-right: 100px;
+        margin-top: 40px;
+        font-size: 35px;
+        font-weight: 900;  
+    } 
+    .contact .mail,
+    .contact .phone,
+    .contact #ig,
+    .contact #fb{
+        color:#F0F8FF;
+        background-color:#002244;
+        justify-content: center;
+        display: flex;
+        height: 4vh;
+        padding: 10px;
+    }
+    .contact .mail:hover,
+    .contact .phone:hover,
+    .contact #ig:hover,
+    .contact #fb:hover{
+        color:#ECFFDC;
+    }
+    .phone::before
+    {
+        content:"\260E";
+    }
+    .mail::before
+    {
+        content:"\2709";   
+    }     
+</style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navbar">
+            <h1 class="logo">Test Management System</h1>
+            <ul>
+                <li><a href="welcome page.html"> Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    <div class="web">
+        <div class="welcome"> 
+            <h1>Welcome to our Website</h1>
+            <h2>Want to make test taking a hassle free process?</h2>
+            <marquee><h3> We are here at your rescue!!!!</h3></marquee>
+        </div>
+    </div>
+<div class="intro">
+    <div class="before">
+        <h1 class="title"> <b> Test Management System</b></h1>
+        <p class="abstract">A Test Management System (TMS) is a software tool that provides a comprehensive platform for 
+            managing the entire software testing process. It helps testing teams to plan, design, execute and report 
+            on their tests, as well as track and manage defects throughout the testing cycle. A TMS allows testing 
+            teams to create and maintain test cases, assign them to testers, and schedule test runs. It also enables 
+            teams to track the progress of testing, generate reports and analytics, and communicate with 
+            stakeholders about the testing status. A well-designed TMS can significantly improve the efficiency 
+            and effectiveness of the testing process, and ultimately contribute to the overall quality of the software 
+            being developed.
+        </p>
+        <br>
+        <div class="options">
+            <ul type="square">
+                <li><a href="new test.html" class="create"> Create A Test </a></li> 
+                <li><a href="Login Page.html" class="take">Take A Test</a> </li>
+            </ul>
+        </div>
+        <div class="image">
+        </div>
+    </div>
+</div>
+<div class="contact">
+    <p href="mail to:prachianand321@gmail.com" class="mail">tms.team@gmail.com</p>
+    <p class="phone">8094526731</p>
+    <p id="fb" class="fa fa-facebook">&nbsptms.team</p>
+    <p id="ig" class="fa fa-instagram">  &nbsp tms.team</p>
+</div>
+
+<script>
+    const nav = document.querySelector('.nav')
+    window.addEventListener('scroll', fixNav)
+
+    function fixNav(){
+    if(window.scrollY > nav.offsetHeight - 150){
+        nav.classList.add('active')}
+        else{
+            nav.classList.remove('active')
+        }}
+        
+</script>   
+</body>
+</html>
