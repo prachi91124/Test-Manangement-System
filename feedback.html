@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Acme');
+        @import url('https://fonts.googleapis.com/css?family=Pangolin');
+        @import url('https://fonts.googleapis.com/css?family=Signika');
+    
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color:aliceblue;
+        font-family: Acme;
+    }
+    .nav{
+        position:fixed;
+        background-color: #002244;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: all 0.3s  ease-in-out;
+        z-index: 2;
+        cursor: pointer;    
+    }
+    .nav .navbar{
+        text-align:right;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        display:flex;
+        flex: auto;
+        flex-grow: inherit;
+        padding: 20px 0;
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Signika;
+        transition:all 0.3s ease-in-out ;
+        justify-content: space-between;    
+    }
+    .nav h1{
+        color: #F0F8FF;
+        font-size: 25px;
+        font:normal;
+    }
+    .nav a.current,
+    .nav a:hover
+    {
+        color:#414c49;
+        font-weight: bold;
+    }
+    .nav a{
+        color:#F0F8FF;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav.active{
+        background-color:#162b24;
+        box-shadow: 0 2px 10px rgba(43, 40, 40, 0.603);
+    }
+    .nav.active a,
+    .nav.active h1{
+        color:#89c5b2;
+    }
+    .nav.active .navbar{
+        padding: 10px 0;
+    }
+    .navbar ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        display:flex;    
+    }     
+    form{
+        height: fit-content;
+        width:600px;
+        justify-content: center;
+        display:block;
+        block-size: auto;
+        align-items:center;
+        margin-top: 150px;
+        margin-bottom: 70px;       
+    }
+    legend{
+        font-family: Acme;
+        text-align: center;
+        font-size: 50px;
+        margin-top: 15px;
+        background-color:#002244;
+        color:#F0F8FF;
+        border-top-right-radius: 0px;
+        padding: 10px;
+    }
+    .feedback{
+        height: 300px;
+        width:100%;
+        background-color:#F0F8FF;
+        border:#F0F8FF solid 2px;
+    }
+    .name{
+        width:100%;
+        margin-bottom: 5px;
+        font-family: Signika;           
+        border: 0;
+        border-bottom: 2px solid;
+        border-color:#F0F8FF;
+        border-radius: 0;
+        background-color:#002244;
+        font-size: 25px;
+    }
+    input:hover{
+        background-color:#a1a4a3;
+        color: aliceblue;
+    }   
+    .box{
+        padding: 10px;
+        color:#F0F8FF;
+        text-align: left;
+        font-size: 20px;
+        font-family: Signika;
+        box-shadow: 10px;
+        margin-bottom: 50px;
+        margin-top: 0;
+        font-size: 25px;
+        background-color:#002244;
+        width: 600px;
+        height: fit-content;
+        justify-content: left;
+        border: 0;
+        border-top:#F0F8FF 5px;
+        border-bottom:#F0F8FF solid 5px;    
+    }
+    label{
+        text-align:left;
+        font-family: Signika;
+        font-size: 20px;
+    }
+    .btn{
+        background-color:#F0F8FF;
+        color:#002244;
+        text-align: center;
+        border-radius: 2px;
+        font-family: Signika;
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    .contact .mail,
+    .contact .phone,
+    .contact #ig,
+    .contact #fb{
+        color:#F0F8FF;
+        background-color:#002244;
+        justify-content: center;
+        display: flex;
+        padding: 10px;
+        bottom: 0;  
+    }
+    .contact .mail:hover,
+    .contact .phone:hover,
+    .contact #ig:hover,
+    .contact #fb:hover{
+        color:#3f4643;
+
+    }
+    .phone::before
+    {
+        content:"\260E";
+    }
+    .mail::before
+    {
+        content:"\2709";   
+    } 
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navbar">
+            <h1 class="logo">Test Management System</h1>
+            <ul>
+                <li><a href="welcome page.html"> Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <center>
+        <form action="thankyou.html">
+            <legend>
+                Give Your Feedback
+            </legend>
+            
+            <fieldset class="box">
+                <input class="feedback" type="text" title="Write your Feedback here" name="Feedback">
+                <button class="btn" formaction="thankyou.html">Submit</button>
+            </fieldset>
+        </form>
+    </center>
+    
+    <div class="contact">
+        <p href="mail to:prachianand321@gmail.com" class="mail">tms.team@gmail.com</p>
+        <p class="phone">8094526731</p>
+        <p id="fb" class="fa fa-facebook">&nbsptms.team</p>
+        <p id="ig" class="fa fa-instagram">  &nbsp tms.team</p>
+    </div>
+</body>
+</html>
