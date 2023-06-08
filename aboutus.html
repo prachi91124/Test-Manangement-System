@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About Us Page</title>
+    <style>
+    
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-family: Acme;
+        background-size:auto;
+    }
+    .nav{
+        position:fixed;
+        background-color:#002244;
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: all 0.3s  ease-in-out;
+        z-index: 2;
+        cursor: pointer;  
+    }
+    .nav .navbar{
+        text-align:right;
+        align-items: center;
+        margin-right: auto;
+        margin-left: auto;
+        display:flex;
+        flex: auto;
+        flex-grow: inherit;
+        padding: 20px 0;
+        font-size: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Signika;
+        transition:all 0.3s ease-in-out ;
+        justify-content: space-between;    
+    }
+    .nav h1{
+        color: #F0F8FF;
+        font-size: 25px;
+        font:normal;
+    }
+    .nav a.current,
+    .nav a:hover
+    {
+        color:#414c49;
+        font-weight: bold;
+    }
+    .nav a{
+        color: #F0F8FF;
+        font-size: 20px;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+    .nav.active{
+        background-color: #002244;
+        box-shadow: 0 2px 10px rgba(43, 40, 40, 0.603);
+    }
+    .nav.active a,
+    .nav.active h1{
+        color:#F0F8FF;
+    }
+    .nav.active .navbar{
+        padding: 10px 0;
+    }
+    .navbar ul{
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+        display:flex;        
+    }
+    body{ 
+        overflow-x: hidden;
+        color:#002244;
+    }
+    .aboutus h1{
+        text-align: center;
+        font-size: 75px;
+        margin-top:60px ;
+        margin-bottom: 40px;
+    }
+    .aboutus p{
+        font-family: Acme;
+        text-align: justify;
+        line-height: 45px;
+        font-size: 25px;
+        word-spacing: 5px;
+    }
+    .aboutus{
+        margin-bottom: 40px;
+        margin-left: 250px;
+        margin-right: 250px;
+    }    
+   .contact .mail,
+   .contact .phone,
+   .contact #ig,
+   .contact #fb {
+    color:#F0F8FF;
+    background-color:#002244;
+    justify-content: center;
+    display: flex;
+    height: 4vh;
+    padding: 10px;
+    width: 100%;
+   }
+    .contact .mail:hover,
+    .contact .phone:hover,
+    .contact #ig:hover,
+    .contact #fb:hover{
+        color:aliceblue;
+    }
+    .phone::before
+    {
+        content:"\260E";
+    }
+    .mail::before
+    {
+        content:"\2709";   
+    }   
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="navbar">
+            <h1 class="logo">Test Management System</h1>
+            <ul>
+                <li><a href="welcome page.html"> Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br><br>
+    
+    <div class="aboutus">
+        <h1> About Us</h1>
+        <p>
+            This Test Management System is designed by our team to help schools
+            colleges and various other institutions, to organize an exam without
+            much hassle. As it was witnessed by everyone during pandemic, taking 
+            exams offline and offline exam organization was very difficult for many
+            and many institutions were facing a lot of problems to organize online 
+            exams in a fair way.
+            <br>
+            <br>
+            So we decided to design a portal to help many such institutions 
+            and also to store results. 
+            <br> 
+            <br>
+            As we can see that our project is also environment friendly as it saves
+            paper in large amounts and also takes care of workforce by keeping them tension
+            free. Our portal is hassle free and tension free.  
+        </p>
+    </div>
+    <div class="contact">
+        <p href="mail to:prachianand321@gmail.com" class="mail">tms.team@gmail.com</p>
+        <p class="phone">8094526731</p>
+        <p id="fb" class="fa fa-facebook">&nbsptms.team</p>
+        <p id="ig" class="fa fa-instagram">  &nbsp tms.team</p>
+    </div>
+    
+</body>
+</html>
